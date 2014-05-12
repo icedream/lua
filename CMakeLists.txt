@@ -65,6 +65,13 @@ IF ( LUA_WIN )
     SET ( LUA_RC src/lua.rc )
     SET ( LUAC_RC src/luac.rc )
   ENDIF ()
+
+  IF ( MSVC )
+    set(CMAKE_CXX_FLAGS_RELEASE "/MT")
+    set(CMAKE_CXX_FLAGS_DEBUG "/MTd")
+    set(CMAKE_C_FLAGS_RELEASE "/MT")
+    set(CMAKE_C_FLAGS_DEBUG "/MTd")
+  ENDIF ()
 ENDIF ()
 
 
